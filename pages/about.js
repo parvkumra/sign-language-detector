@@ -2,9 +2,9 @@ const Page = () => {
   return (
     <div style={{ marginTop: '2em' }}>
       <div className="jumbotron text-center">
-        <h1>Signify - ASL Translator</h1>
+        <h1> Sign Language Predictor</h1>
         <h4>
-          Signify uses machine learning to transform webcam input into readable
+          This uses deep learning to transform webcam input into readable
           sign language using a variety of different techniques. The series of
           texts below detail the steps taken for signify to translate an image
           into a final word.
@@ -46,20 +46,17 @@ const Page = () => {
         <h3 className="text-center">2. Tensorflow CNN</h3>
         <div className="row justify-content-center">
           <img
-            src="model-architecture.png"
+            src="/Screenshot 2024-11-17 at 1.00.03 PM.png"
             alt="OpenCV Pipeline Demo"
             className="img-responsive col-xs-12 col-md-6"
-            style={{ height: '100%' }}
+            height={250}
+            width={80}
+
+            
           />
-          <div className="col-xs-12 col-md-6">
+          <div className="col-xs-12 col-md-6  ">
             <p>
-              After experimenting with various different model architectures,
-              transfer learning from various different base convolutional neural
-              network including vgg19, alexnet, and more, we settled on the
-              architecture shown here, which both allowed the model to be run in
-              real time as well as be fairly accurate. We took the output of a
-              pre-trained convolutional neural network (mobile net) and added
-              three dense layers to alter the output to classify hand signs.
+            We developed a custom CNN model. This architecture struck a balance between real-time performance and classification accuracy. We designed the model to take the output from our custom-trained convolutional layers and added three fully connected dense layers to transform the output for hand sign classification.
             </p>
           </div>
         </div>

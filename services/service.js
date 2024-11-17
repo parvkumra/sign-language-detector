@@ -10,7 +10,7 @@ class CV {
     this.worker.postMessage(event);
     return new Promise((res, rej) => {
       let interval = setInterval(() => {
-        const status = this._status[msg];
+        const status = this._status[msg]||[];
         // if (!status || status == undefined) res(true);
         if (status[0] === 'done') {
           res(status[1]);
@@ -36,8 +36,8 @@ class CV {
     this.worker = new Worker('/js/worker.js'); // load worker
 
     // Capture events and save [status, event] inside the _status object
-    this.worker.onmessage = (e) => (this._status[e.data.msg] = ['done', e]);
-    this.worker.onerror = (e) => (this._status[e.data.msg] = ['error', e]);
+    this.worker.onmessage = (e) => (this._status[e.data?.msg] = ['done', e]);
+    this.worker.onerror = (e) => (this._status[e.data?.msg] = ['error', e]);
     return this._dispatch({ msg: 'load' });
   }
 

@@ -1,4 +1,4 @@
-const autocorrect = require('autocorrect')();
+var autocorrect = require('autocorrect')();
 
 export default (req, res) => {
   res

@@ -24,3 +24,12 @@
     font-size: 24px;
   }
 }
+.Reset-button{
+  background-color: rgb(34, 34, 34);
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  margin-top: 4px;
+
+}
